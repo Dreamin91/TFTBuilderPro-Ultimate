@@ -1,0 +1,96 @@
+
+@font-face {
+    font-family: LeagueFonts;
+    src: url(../fonts/Friz_Quadrata_Regular.ttf);
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #22212D;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ffd54f;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+body{
+    background-color: #09232B;
+    overflow: hidden;
+}
+
+nav{
+    border-bottom : 2px solid #ffd54f;
+}
+
+#title-container{
+    margin-left: -12em;
+}
+
+.sidebar-heading{
+    font-family: LeagueFonts, serif;
+    color : #f1f1f1;
+    display: inline-block;
+    padding : 7px;
+}
+
+#navTitle{
+    font-family: LeagueFonts, serif;
+    padding-left: 1em;
+}
+
+
+#sidebar-wrapper {
+    float: left;
+    width: 18%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 91vh;
+    text-align: center;
+}
+
+.team-container {
+    margin: 50px 50px 0 50px;
+    border: 2px solid #ffd54f;
+    border-radius: 8px;
+    height: 300px;
+}
+
+.back-dark {
+    background-color: #16152D;
+}
+
+.cards-group * {
+    border : 2px solid #09232B;
+    height: 80px;
+}
+
+.cards-group *:hover{
+    opacity: 0.78;
+    transform: scale(1.05);
+}
+.team-container2 {
+    border: 2px solid #7FB069;
+    border-radius: 8px;
+    width: 100%;
+    height: 300px;
+    margin-top: 50px;
+    margin-left: -50px;
+}
+
+.advice {
+    margin-left: 50px;
+    border: 2px solid #ffd54f;
+    border-radius: 8px;
+    height: 200px;
+}
+
+.button-holder{
+    padding: 7px;
+}
