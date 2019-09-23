@@ -34,4 +34,3 @@ create table classes
 	treshold_2 int null,
 	treshold_3 int null
 );
-

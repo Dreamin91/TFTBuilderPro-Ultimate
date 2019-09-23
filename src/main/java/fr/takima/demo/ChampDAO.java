@@ -11,6 +11,6 @@ import java.util.List;
 public interface ChampDAO extends CrudRepository<Champ, Integer> {
 
     //@Modifying
-    @Query("SELECT c from Champ c")
-    List<Champ> getAllChampId();
+    //@Query("SELECT c from Champ c")
+    //List<Champ> getAllChampId();
 }

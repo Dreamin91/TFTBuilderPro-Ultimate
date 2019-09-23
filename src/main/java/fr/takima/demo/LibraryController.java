@@ -32,6 +32,7 @@ public class LibraryController {
   public String homePage(Model m) {
     //m.addAttribute("ids", champDAO.getAllChampId());
       m.addAttribute("champs", champDAO.findAll());
+      m.addAttribute("team", new Team());
     return "index";
   }
 
@@ -41,10 +42,10 @@ public class LibraryController {
     return "new";
   }
 
-  @PostMapping("/new")
-  public RedirectView createNewTeam(@ModelAttribute Champ champ, RedirectAttributes attrs) {
-    attrs.addFlashAttribute("message", "Champion ajouté avec succès");
-    // champDAO.save(champ);
+  @PostMapping("/")
+  public RedirectView createNewTeam(@ModelAttribute Team team, RedirectAttributes attrs) {
+    attrs.addFlashAttribute("message", "Equipe ajoutée avec succés");
+    teamDAO.save(team);
     return new RedirectView("/");
   }
 
