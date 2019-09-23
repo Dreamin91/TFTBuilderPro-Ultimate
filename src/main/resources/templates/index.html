@@ -60,29 +60,17 @@
       <div class="row button-holder">
         <div class="col-sm-1"></div>
         <form method="post" th:action="@{/}" th:object="${team}">
-          <div class="col-sm-1">
+          <span class="col-sm-1">
             <input th:field="*{author}" class="btn btn-dark" type="text" placeholder="nom de l'auteur">
-          </div>
-          <div class="col-sm-1">
+          </span>
+          <span class="col-sm-1">
             <input th:field="*{team_name}" class="btn btn-dark" type="text" placeholder="nom de l'équipe">
-          </div>
-            <input th:field="*{champ_1_id}" id="champ1" type="text" th:value="fdshivhdns">
-            <input th:field="*{champ_2_id}" id="champ2" type="text">
-            <input th:field="*{champ_3_id}" id="champ3" type="text">
-            <input th:field="*{champ_4_id}" id="champ4" hidden type="text" >
-            <input th:field="*{champ_5_id}" id="champ5" hidden type="text" >
-            <input th:field="*{champ_6_id}" id="champ6" hidden type="text" >
-            <input th:field="*{champ_7_id}" id="champ7" hidden type="text" >
-            <input th:field="*{champ_8_id}" id="champ8" hidden type="text" >
-            <input th:field="*{champ_9_id}" id="champ9" hidden type="text" >
-
-          <div class="col-sm-1">
-            <input class="btn btn-dark" type="submit" value="Sauvegarde">
-          </div>
+          </span>
+                <input hidden th:each="i : ${#numbers.sequence( 1, 9)}" th:id="${'champ_'+i+'_id'}" th:name="${'champ_'+i+'_id'}" type="text">
+          <span class="col-sm-1">
+            <input class="btn btn-dark" type="submit" value="Sauvegarde" id="save" disabled>
+          </span>
         </form>
-      </div>
-      <div class="row">
-        <div class="col-md-6 advice"></div>
       </div>
     </div>
 
