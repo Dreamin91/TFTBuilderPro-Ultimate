@@ -55,8 +55,16 @@ nav{
     text-align: center;
 }
 
+.list-title{
+    font-size: 24px;
+    color: whitesmoke;
+    font-family: LeagueFonts, serif;
+    padding: 20px 10px 0 0;
+    border-bottom: 1px solid #263238;
+}
+
 .team-container {
-    margin: 50px 50px 0 50px;
+    margin: 30px 50px 0 50px;
     border: 2px solid #ffd54f;
     border-radius: 8px;
     height: 300px;
@@ -80,7 +88,7 @@ nav{
     border-radius: 8px;
     width: 100%;
     height: 300px;
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: -50px;
 }
 

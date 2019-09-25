@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
+import java.util.ArrayList;
+
 /**
  *
  */
@@ -36,10 +38,11 @@ public class LibraryController {
     return "index";
   }
 
-  @GetMapping("/new")
+  @GetMapping("/Comps")
   public String addNewTeam(Model m) {
-    m.addAttribute("champ", new Champ());
-    return "new";
+    m.addAttribute("teams", teamDAO.findAll());
+    m.addAttribute("champs", new ArrayList<Champ>());
+    return "Comps";
   }
 
   @PostMapping("/")

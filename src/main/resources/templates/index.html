@@ -4,9 +4,6 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="">
-  <meta name="author" content="">
 
   <title>TftBuilderPro the ULTIMATE Riot's League of Legends Teamfight Tactics Team Composition Builder</title>
 
@@ -16,10 +13,11 @@
 </head>
 
 <body>
+    <!-- Header -->
   <nav class="navbar navbar-expand-lg navbar-dark back-dark sticky-top">
     <div class="container">
       <div id="title-container">
-        <img src="./images/Logo.png" height="50" width="50"/>
+        <img src="./images/Logo.png" height="50" width="50" alt="Logo"/>
         <a id="navTitle" class="navbar-brand" href="#">TftBuilderPro</a>
       </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
@@ -28,18 +26,19 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Builder
+            <a class="nav-link" href="#"> Team Builder
               <span class="sr-only">(current)</span>
             </a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="comps">Best comps</a>
+            <a class="nav-link" href="Comps">Liste des compos</a>
         </ul>
       </div>
     </div>
   </nav>
 
+    <!-- Sidebar -->
   <div>
     <div class="back-dark" id="sidebar-wrapper">
       <div class="sidebar-heading"> Champions  </div>
@@ -47,12 +46,16 @@
         <span th:each="champ : ${champs}">
           <img th:attr="src=@{'./images/Cartes champs/' + ${champ.id} + '.png'}, id=${champ.id}, onclick=@{'transpose(' + ${champ.id} + ')'}"/>
         </span>
-
       </div>
     </div>
 
   <!-- Page Content -->
+
     <div  class="container-fluid">
+      <div class="row">
+        <div class="col-sm-1"></div>
+        <div class="list-title col-sm-2">Team Builder</div>
+      </div>
       <div class="row">
         <div class="col-sm-9 team-container" id="team-comp-container"></div>
         <div class="col-sm-2 team-container2"></div>
