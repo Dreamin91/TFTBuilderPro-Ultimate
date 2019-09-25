@@ -21,7 +21,7 @@
 }
 
 body{
-    background-color: #09232B;
+    background-color: #04111b;
     overflow: hidden;
 }
 
@@ -71,7 +71,7 @@ nav{
 }
 
 .back-dark {
-    background-color: #16152D;
+    background-color: #000b15;
 }
 
 .cards-group * {

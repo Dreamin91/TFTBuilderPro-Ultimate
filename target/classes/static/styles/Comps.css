@@ -31,7 +31,7 @@
 
 
 body{
-    background-color: #09232B;
+    background-color: #04111b;
     overflow: hidden;
 }
 
@@ -58,16 +58,16 @@ nav{
 }
 
 .team-container {
-    margin: 15px;
+    margin: 15px 15px 0 0;
     border: 1px solid #ffd54f;
     width: 99%;
     border-radius: 8px;
     height: 80px;
-    background-color: #263238;
+    background-image: url("../images/comp_bg.jpg");
 }
 
 .back-dark {
-    background-color: #16152D;
+    background-color: #000b15;
 }
 
 
@@ -80,23 +80,18 @@ nav{
     color: whitesmoke;
     font-family: LeagueFonts, serif;
     margin-top: 8px;
-    margin-left: 2%;
-    vertical-align: center;
 }
 
 .comp-author{
     font-size: 14px;
     color: whitesmoke;
-    margin-top: 42px;
-    margin-left: -78px;
-    margin-right: 50px;
     font-style: italic;
+    margin-top: -30px;
+    margin-left: 8%;
 }
 
 .mini-champ{
     padding: 10px;
     margin-left: 1%;
-    height: 80px;
-    width: 80px;
 }
 
