@@ -50,9 +50,33 @@
                     <img src="./images/author-icon-19.jpg" height="20" width="20" alt="Author"/>
                     <span th:text="${team.author}" ></span>
                 </div>
-                <!--  <span th:each="champ : ${team}">
-                    <img th:attr="src=@{'./images/Cartes champs mini/' + ${champ.id} + '.png'}"/>
-                </span>    -->
+                <span th:unless="${team.champ_1_id == null}">
+                    <img class="mini-champ" th:attr="src=@{'./images/Cartes champs mini/' + ${team.champ_1_id} + '.png'}" alt="Champion"/>
+                </span>
+                <span th:unless="${team.champ_2_id == null}">
+                    <img class="mini-champ" th:attr="src=@{'./images/Cartes champs mini/' + ${team.champ_2_id} + '.png'}" alt="Champion"/>
+                </span>
+                <span th:unless="${team.champ_3_id == null}">
+                    <img class="mini-champ" th:attr="src=@{'./images/Cartes champs mini/' + ${team.champ_3_id} + '.png'}" alt="Champion"/>
+                </span>
+                <span th:unless="${team.champ_4_id == null}">
+                    <img class="mini-champ" th:attr="src=@{'./images/Cartes champs mini/' + ${team.champ_4_id} + '.png'}" alt="Champion"/>
+                </span>
+                <span th:unless="${team.champ_5_id == null}">
+                    <img class="mini-champ" th:attr="src=@{'./images/Cartes champs mini/' + ${team.champ_5_id} + '.png'}" alt="Champion"/>
+                </span>
+                <span th:unless="${team.champ_6_id == null}">
+                    <img class="mini-champ" th:attr="src=@{'./images/Cartes champs mini/' + ${team.champ_6_id} + '.png'}" alt="Champion"/>
+                </span>
+                <span th:unless="${team.champ_7_id == null}">
+                    <img class="mini-champ" th:attr="src=@{'./images/Cartes champs mini/' + ${team.champ_7_id} + '.png'}" alt="Champion"/>
+                </span>
+                <span th:unless="${team.champ_8_id == null}">
+                    <img class="mini-champ" th:attr="src=@{'./images/Cartes champs mini/' + ${team.champ_8_id} + '.png'}" alt="Champion"/>
+                </span>
+                <span th:unless="${team.champ_9_id == null}">
+                    <img class="mini-champ" th:attr="src=@{'./images/Cartes champs mini/' + ${team.champ_9_id} + '.png'}" alt="Champion"/>
+                </span>
             </div>
         </div>
     </div>

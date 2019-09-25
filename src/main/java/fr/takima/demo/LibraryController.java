@@ -19,20 +19,15 @@ import java.util.ArrayList;
 public class LibraryController {
 
   private final ChampDAO champDAO;
-  private final OriginDAO originDAO;
-  private final ClassDAO classDAO;
   private final TeamDAO teamDAO;
 
   public LibraryController(ChampDAO champDAO, OriginDAO originDAO, ClassDAO classDAO, TeamDAO teamDAO) {
     this.champDAO = champDAO;
-    this.originDAO = originDAO;
-    this.classDAO = classDAO;
     this.teamDAO = teamDAO;
   }
 
   @GetMapping
   public String homePage(Model m) {
-    //m.addAttribute("ids", champDAO.getAllChampId());
       m.addAttribute("champs", champDAO.findAll());
       m.addAttribute("team", new Team());
     return "index";
