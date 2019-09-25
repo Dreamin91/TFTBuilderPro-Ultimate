@@ -24,6 +24,7 @@ function onDelete(id){
     champ[id] = null;
     addAll();
     cpt--;
+    disableSaveButton();
 }
 
 function addAll(){

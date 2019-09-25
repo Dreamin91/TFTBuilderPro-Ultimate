@@ -1,4 +1,4 @@
-package fr.BedardBouzehouaneDouillard.tftbuilder.app;
+package fr.BedardBouzehouaneDouillard.tftbuilder;
 
 import fr.BedardBouzehouaneDouillard.tftbuilder.data.ChampDAO;
 import fr.BedardBouzehouaneDouillard.tftbuilder.data.TeamDAO;
@@ -6,10 +6,7 @@ import fr.BedardBouzehouaneDouillard.tftbuilder.model.Champ;
 import fr.BedardBouzehouaneDouillard.tftbuilder.model.Team;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.servlet.view.RedirectView;
 
@@ -46,9 +43,16 @@ public class LibraryController {
 
   @PostMapping("/")
   public RedirectView createNewTeam(@ModelAttribute Team team, RedirectAttributes attrs) {
-    attrs.addFlashAttribute("message", "Equipe ajoutée avec succés");
+    attrs.addFlashAttribute("message", "Equipe ajoutée avec succès");
     teamDAO.save(team);
     return new RedirectView("/");
+  }
+
+  @DeleteMapping("/{id}")
+  public RedirectView deleteUser(@PathVariable Integer id, RedirectAttributes attrs) {
+    attrs.addFlashAttribute("message", "Equipe supprimée avec succès");
+    this.teamDAO.deleteById(id);
+    return new RedirectView("/Comps");
   }
 
 }

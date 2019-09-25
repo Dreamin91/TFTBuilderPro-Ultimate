@@ -64,6 +64,7 @@ nav{
     border-radius: 8px;
     height: 80px;
     background-image: url("../images/comp_bg.jpg");
+    position: relative;
 }
 
 .back-dark {
@@ -93,5 +94,12 @@ nav{
 .mini-champ{
     padding: 10px;
     margin-left: 1%;
+}
+
+.closeForm{
+    position: absolute;
+    vertical-align: middle;
+    right: 10px;
+    color: #000b15;
 }
 

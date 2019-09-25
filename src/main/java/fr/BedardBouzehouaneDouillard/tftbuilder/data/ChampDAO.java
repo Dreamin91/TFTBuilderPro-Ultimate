@@ -1,7 +1,6 @@
-package fr.BedardBouzehouaneDouillard.tftbuilder.app;
+package fr.BedardBouzehouaneDouillard.tftbuilder.data;
 
-import fr.BedardBouzehouaneDouillard.tftbuilder.classes.Champ;
-import fr.BedardBouzehouaneDouillard.tftbuilder.classes.Champ;
+import fr.BedardBouzehouaneDouillard.tftbuilder.model.Champ;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

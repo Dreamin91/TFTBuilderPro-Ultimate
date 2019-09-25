@@ -1,4 +1,4 @@
-package fr.BedardBouzehouaneDouillard.tftbuilder.classes
+package fr.BedardBouzehouaneDouillard.tftbuilder.model
 
 import javax.persistence.*
 

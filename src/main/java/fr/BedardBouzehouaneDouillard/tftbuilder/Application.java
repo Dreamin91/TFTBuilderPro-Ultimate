@@ -1,4 +1,4 @@
-package fr.BedardBouzehouaneDouillard.tftbuilder.app;
+package fr.BedardBouzehouaneDouillard.tftbuilder;
 
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

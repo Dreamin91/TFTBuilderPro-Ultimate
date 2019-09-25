@@ -1,6 +1,6 @@
-package fr.BedardBouzehouaneDouillard.tftbuilder.app;
+package fr.BedardBouzehouaneDouillard.tftbuilder.data;
 
-import fr.BedardBouzehouaneDouillard.tftbuilder.classes.Team;
+import fr.BedardBouzehouaneDouillard.tftbuilder.model.Team;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

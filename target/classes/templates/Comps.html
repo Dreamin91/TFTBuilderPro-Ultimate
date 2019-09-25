@@ -37,6 +37,14 @@
 
 <div>
     <!-- Page Content -->
+
+    <div th:unless="${message == null}" class="container" style="padding: 10px;">
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong><span th:text="${message}"></span></strong>
+            </div>
+        </div>
+
     <div class="list-title col-sm-3">Compositions d'équipes</div>
 
     <div  class="col-sm-10 comps-list shadow">
@@ -55,7 +63,7 @@
                 </div>
 
                 <span th:unless="${team.champ_1_id == null}">
-                    <img class="mini-champ" th:attr="src=@{'./images/Cartes champs mini/' + ${team.champ_1_id} + '.png'}"  height="80" width="80" alt="Champion"/>
+                    <img class="mini-champ" th:attr="src=@{'./images/Cartes champs mini/' + ${team.champ_1_id} + '.png'}" height="80" width="80" alt="Champion"/>
                 </span>
                 <span th:unless="${team.champ_2_id == null}">
                     <img class="mini-champ" th:attr="src=@{'./images/Cartes champs mini/' + ${team.champ_2_id} + '.png'}" height="80" width="80" alt="Champion"/>
@@ -81,6 +89,14 @@
                 <span th:unless="${team.champ_9_id == null}">
                     <img class="mini-champ" th:attr="src=@{'./images/Cartes champs mini/' + ${team.champ_9_id} + '.png'}" height="80" width="80" alt="Champion"/>
                 </span>
+                <form class="closeForm" action="#" th:action="@{'/' + ${team.id}}" th:method="delete">
+                    <input type="hidden" value="delete"/>
+                    <button type="submit" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;
+                    </span>
+                    </button>
+                </form>
+
             </div>
         </div>
     </div>
