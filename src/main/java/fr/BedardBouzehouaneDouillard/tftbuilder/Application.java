@@ -1,4 +1,4 @@
-package fr.takima.demo;
+package fr.BedardBouzehouaneDouillard.tftbuilder.app;
 
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;

@@ -1,11 +1,9 @@
-package fr.takima.demo;
+package fr.BedardBouzehouaneDouillard.tftbuilder.app;
 
-import org.springframework.data.jpa.repository.Modifying;
-import org.springframework.data.jpa.repository.Query;
+import fr.BedardBouzehouaneDouillard.tftbuilder.classes.Champ;
+import fr.BedardBouzehouaneDouillard.tftbuilder.classes.Champ;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 
 @Repository
 public interface ChampDAO extends CrudRepository<Champ, Integer> {

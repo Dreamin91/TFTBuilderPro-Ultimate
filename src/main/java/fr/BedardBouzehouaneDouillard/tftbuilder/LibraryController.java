@@ -1,5 +1,9 @@
-package fr.takima.demo;
+package fr.BedardBouzehouaneDouillard.tftbuilder.app;
 
+import fr.BedardBouzehouaneDouillard.tftbuilder.data.ChampDAO;
+import fr.BedardBouzehouaneDouillard.tftbuilder.data.TeamDAO;
+import fr.BedardBouzehouaneDouillard.tftbuilder.model.Champ;
+import fr.BedardBouzehouaneDouillard.tftbuilder.model.Team;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +25,7 @@ public class LibraryController {
   private final ChampDAO champDAO;
   private final TeamDAO teamDAO;
 
-  public LibraryController(ChampDAO champDAO, OriginDAO originDAO, ClassDAO classDAO, TeamDAO teamDAO) {
+  public LibraryController(ChampDAO champDAO, TeamDAO teamDAO) {
     this.champDAO = champDAO;
     this.teamDAO = teamDAO;
   }
