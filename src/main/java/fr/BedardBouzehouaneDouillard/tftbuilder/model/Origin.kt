@@ -2,7 +2,6 @@ package fr.BedardBouzehouaneDouillard.tftbuilder.model
 
 import javax.persistence.*
 
-
 @Entity(name = "origins")
 data class Origin(
     @GeneratedValue(strategy = GenerationType.IDENTITY)

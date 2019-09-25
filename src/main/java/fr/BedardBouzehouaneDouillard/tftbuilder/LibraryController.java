@@ -12,9 +12,6 @@ import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.ArrayList;
 
-/**
- *
- */
 @RequestMapping("/")
 @Controller
 public class LibraryController {

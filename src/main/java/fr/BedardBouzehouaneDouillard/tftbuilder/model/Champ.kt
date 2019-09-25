@@ -2,9 +2,6 @@ package fr.BedardBouzehouaneDouillard.tftbuilder.model
 
 import javax.persistence.*
 
-/**
- *
- */
 @Entity(name = "champs")
 data class Champ(
         @GeneratedValue(strategy = GenerationType.IDENTITY)
