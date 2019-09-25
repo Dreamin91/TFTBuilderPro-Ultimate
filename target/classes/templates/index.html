@@ -3,95 +3,104 @@
 
 <head>
 
-  <meta charset="utf-8">
+    <meta charset="utf-8">
 
-  <title>TftBuilderPro the ULTIMATE Riot's League of Legends Teamfight Tactics Team Composition Builder</title>
+    <title>TftBuilderPro the ULTIMATE Riot's League of Legends Teamfight Tactics Team Composition Builder</title>
 
-  <!-- Bootstrap core CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <link rel="stylesheet" href="./styles/index.css">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/index.css">
 </head>
 
 <body>
-    <!-- Header -->
-    <nav class="navbar navbar-expand-lg navbar-dark back-dark sticky-top">
+<!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-dark back-dark sticky-top">
     <div class="container">
-      <div id="title-container">
-        <img src="./images/Logo.png" height="50" width="50" alt="Logo"/>
-        <a id="navTitle" class="navbar-brand" href="#">TftBuilderPro</a>
-      </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarResponsive">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="#"> Team Builder
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
+        <div id="title-container">
+            <img src="./images/Logo.png" height="50" width="50" alt="Logo"/>
+            <a id="navTitle" class="navbar-brand" href="#">TftBuilderPro</a>
+        </div>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#"> Team Builder
+                        <span class="sr-only">(current)</span>
+                    </a>
+                </li>
 
-          <li class="nav-item">
-            <a class="nav-link" href="Comps">Liste des compos</a>
-        </ul>
-      </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="Comps">Liste des compos</a>
+            </ul>
+        </div>
     </div>
-  </nav>
+</nav>
 
-    <!-- Sidebar -->
-  <div>
+<!-- Sidebar -->
+<div>
     <div class="back-dark" id="sidebar-wrapper">
-      <div class="sidebar-heading"> Champions  </div>
-      <div class="list-group list-group-flush cards-group">
+        <div class="sidebar-heading"> Champions</div>
+        <div class="list-group list-group-flush cards-group">
         <span th:each="champ : ${champs}">
           <img th:attr="src=@{'./images/Cartes champs/' + ${champ.id} + '.png'}, id=${champ.id}, onclick=@{'transpose(' + ${champ.id} + ')'}"/>
         </span>
-      </div>
+        </div>
     </div>
 
-  <!-- Page Content -->
+    <!-- Page Content -->
 
     <div class="container-fluid">
-      <div th:unless="${message == null}" class="row">
-        <div class="container" style="padding: 10px;">
-          <div class="alert alert-success alert-dismissible fade show" role="alert">
-            <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-            <strong><span th:text="${message}"></span></strong>
-          </div>
+        <div th:unless="${message == null}" class="row">
+            <div class="container" style="padding: 10px;">
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong><span th:text="${message}"></span></strong>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-1"></div>
-        <div class="list-title col-sm-2">Team Builder</div>
-      </div>
-      <div class="row">
-        <div class="col-sm-9 team-container" id="team-comp-container"></div>
-        <div class="col-sm-2 team-container2"></div>
-      </div>
-      <div class="row button-holder">
-        <div class="col-sm-1"></div>
-        <form method="post" th:action="@{/}" th:object="${team}">
+        <div class="row">
+            <div class="col-sm-1"></div>
+            <div class="list-title col-sm-2">Team Builder</div>
+        </div>
+        <div class="row">
+            <div class="col-sm-9 team-container" id="team-comp-container"></div>
+            <div class="col-sm-2 team-container2"></div>
+        </div>
+        <div class="row button-holder">
+            <div class="col-sm-1"></div>
+            <form method="post" th:action="@{/}" th:object="${team}">
           <span class="col-sm-1">
             <input th:field="*{author}" class="btn btn-dark" type="text" placeholder="nom de l'auteur">
           </span>
-          <span class="col-sm-1">
+                <span class="col-sm-1">
             <input th:field="*{team_name}" class="btn btn-dark" type="text" placeholder="nom de l'équipe">
           </span>
-                <input hidden th:each="i : ${#numbers.sequence( 1, 9)}" th:id="${'champ_'+i+'_id'}" th:name="${'champ_'+i+'_id'}" type="text">
-          <span class="col-sm-1">
+                <input hidden th:each="i : ${#numbers.sequence( 1, 9)}" th:id="${'champ_'+i+'_id'}"
+                       th:name="${'champ_'+i+'_id'}" type="text">
+                <span class="col-sm-1">
             <input class="btn btn-dark" type="submit" value="Sauvegarde" id="save" disabled>
           </span>
-        </form>
-      </div>
+            </form>
+        </div>
     </div>
 
 </div>
 
-  <!-- Bootstrap core JavaScript -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <script src="./scripts/index.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="./scripts/index.js"></script>
 
 </body>
 
